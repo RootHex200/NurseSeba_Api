@@ -1,0 +1,72 @@
+
+
+
+NurseSeba=======
+
+	post-	/api/v1/nusrseseba/adddoner
+
+	1.Maker doner list	
+		1.profile image--file
+		2.user name --string**
+		3.mobile number-- string**
+		4.password--string**
+		5.email --string
+		6.designation--string
+		7.date of birth--**
+		8.blood group--string
+		9. last blood doante date---string***
+		
+		10.division---string**
+		11. district---string**
+		12. upazill/thana---string**
+		13.area---string**
+		
+		
+		
+	post-	/api/v1/nusrseseba/addnurse
+	
+	2.make nurse list
+		1.profile image--file
+		2.user name --string**
+		3.mobile numner--string**
+		4.password--string**
+		5.email--string
+		6.gender --string**
+		7. date of birth--string**
+		8.registration type--string**
+		9.division--string**
+		10.district--string**
+		11.upazilla/thana--string**
+		12.area--string**
+		
+	post-	/api/v1/nusrseseba/searchdoner
+	3.searching doner list-----
+	
+		1.division
+		2.district
+		3.upazila/thanan
+		4.area
+		5.blood group
+		
+		
+	post-	/api/v1/nusrseseba/searchnurse
+	4. searching nurse list--
+		1.division
+		2.district
+		3.upazilla
+		4.area
+	
+	
+	5. health tips
+		1.titile
+		2.description
+		
+		
+	6.equipment
+		1.equipment_name
+		3.price
+		4.phone number
+		
+		
+		
+			
