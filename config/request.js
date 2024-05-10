@@ -6,7 +6,7 @@ const joi=require("joi");
 
 
 const AddBloodRequest=joi.object().keys({
-    profileImage:joi.string().optional(),
+    profileImage:joi.optional(),
     name:joi.string().required(),
     mobileNumber:joi.string().required(),
     password:joi.string().required(),
@@ -22,7 +22,7 @@ const AddBloodRequest=joi.object().keys({
 })
 
 const AddNurseRequest=joi.object().keys({
-    profileImage:joi.string().optional(),
+    profileImage:joi.optional(),
     name:joi.string().required(),
     mobileNumber:joi.string().required(),
     password:joi.string().required(),

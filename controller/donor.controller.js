@@ -4,7 +4,13 @@ const { bloodschema } = require("../model/bloodDonorschema");
 
 const {redisClient}=require("../config/db")
 const addBlooddonor=async(req,res)=>{
-    const imagfile=`http://localhost:4000/static/${req.file.filename}`;
+    var imagfile;
+    if(req.file==null){
+        imagfile=null;
+    }
+    if(req.file!=null){
+        imagfile=`http://localhost:4000/static/${req.file.filename}`;
+    }
     const document={
         profileImage:imagfile,
         name:req.body.name,
@@ -110,16 +116,6 @@ const searchDonor=async(req,res)=>{
 
 }
 
-//aggregration
-
-const agg=async(req,res)=>{
-    const filter = { name: "nazmul" };
-    const docs = await bloodschema.aggregate([
-        { $match: filter }
-      ]);
-    
-    res.json(docs)
-}
 
 
-module.exports={addBlooddonor,getDonors,searchDonor,agg}
+module.exports={addBlooddonor,getDonors,searchDonor}

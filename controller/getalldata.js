@@ -1,3 +1,4 @@
+
 const { bloodschema } = require("../model/bloodDonorschema");
 const { equiment } = require("../model/eqipment");
 const { healtSchema } = require("../model/healthtips");
@@ -6,16 +7,26 @@ const { schemanurse } = require("../model/nurseschema");
 
 
 
-const getApiData=async(req,res)=>{
 
-    try{
 
-        const nursedata=await bloodschema.find();
+const getApiData = async (req, res) => {
 
-        const donordata=await schemanurse.find();
+    try {
+            
+        const nursedata = await bloodschema.find();
 
-        const healthtips=await healtSchema.find();
-        const eqipment=await equiment.find();
+        const donordata = await schemanurse.find();
+
+        const healthtips = await healtSchema.find();
+        const eqipment = await equiment.find();
+
+
+        const data = {
+            nurses: nursedata,
+            donor: donordata,
+            healthtips: healthtips,
+            equiment: eqipment
+        }
 
         res.status(200).json({
             status:200,
@@ -27,13 +38,15 @@ const getApiData=async(req,res)=>{
             }
         })
 
-    }catch (e){
-        const error=e.message;
+
+
+    } catch (e) {
+        const error = e.message;
         res.status(400).json({
-            message:error
+            message: error
         });
     }
 }
 
 
-module.exports={getApiData};
+module.exports = { getApiData };

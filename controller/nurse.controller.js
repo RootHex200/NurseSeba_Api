@@ -3,7 +3,13 @@ const {schemanurse }= require("../model/nurseschema");
 const {redisClient}=require("../config/db")
 
 const addnurse=async(req,res)=>{
-    const imagfile=`http://localhost:4000/static/${req.file.filename}`;
+    var imagfile;
+    if(req.file==null){
+        imagfile=null;
+    }
+    if(req.file!=null){
+        imagfile=`http://localhost:4000/static/${req.file.filename}`;
+    }
     const document={
         profileImage:imagfile,
         name:req.body.name,
